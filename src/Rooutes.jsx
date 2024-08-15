@@ -52,6 +52,8 @@ import Usememo from "./topics/hooks/callback/Usememo";
 import Usecallback from "./topics/hooks/callback/Usecallback"
 import CountVowels from './dev/coding/CountVowels';
 import { ArraysL } from './leetcode/75/ArraysL';
+import { Css } from './Css';
+import Freecodecamp from './freecodecamp/Freecodecamp';
 //import { Rotatearray } from './codility/Rotatearray';
 //import School from './geeksforgeeks/zoho/school/School';
 //import Basic from './geeksforgeeks/zoho/basic/Basic';
@@ -160,6 +162,16 @@ const routes = [
     path: '/leetcode/75/array',
     exact: true,
     element: <ArraysL/>
+  },
+  {
+    path: '/css',
+    exact: true,
+    element: <Css/>
+  },
+  {
+    path: '/freecodecamp',
+    exact: true,
+    element: <Freecodecamp/>
   },
 ];
 
