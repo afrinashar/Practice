@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import * as Yup from 'yup';
  const Signup = () => {
     const [formData, setFormData] = useState({
@@ -54,8 +54,11 @@ import * as Yup from 'yup';
       };
     
   return (<>
-  <h6>Task-5: <h4><strong>Create Signup Form Controlled Component</strong></h4>
-Create a user registration form with fields for username, email, and password. Validate inputs and display appropriate error messages. (Create a controlled form component with a state to manage input values.)</h6>
+  <div  style={{backgroundColor:"#EFC3CA", color:"#3E030C"}}>
+    <strong>Create Signup Form Controlled Component</strong> 
+<p>Create a user registration form with fields for username, email, 
+and password. Validate inputs and display appropriate error messages.
+ (Create a controlled form component with a state to manage input values.)</p> 
     <div>Signup</div>
     <form onSubmit={handleSubmit}>
         <div>
@@ -74,9 +77,11 @@ Create a user registration form with fields for username, email, and password. V
           <input type="password" name="password" value={formData.password} onChange={handleChange} />
           {errors.password && <span className="error-message">{errors.password}</span>}
         </div>
-        <button type="submit" disabled={loading}>{loading ? 'Submitting...' : 'Submit'}</button>
+        <button  style={{backgroundColor:"#3E030C", color:"#EFC3CA"}}type="submit" disabled={loading}>{loading ? 'Submitting...' : 'Submit'}</button>
       </form>
-      {successMessage && <div className="success-message">{successMessage}</div>}
-  </>)
+      {successMessage && 
+      <div className="success-message">{successMessage}
+      </div>}</div>
+ </>)
 }
 export default Signup

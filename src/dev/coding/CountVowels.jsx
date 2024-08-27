@@ -12,7 +12,7 @@ const CountVowels = () => {
   return (
     <div>
         <h1>Count VOWELS</h1>
-        <Input onInputChange={handleInputChange}/>
+        <input onChange={handleInputChange}/>
      
       <GetVowelsCount vowelArray={vowels} />
     </div>

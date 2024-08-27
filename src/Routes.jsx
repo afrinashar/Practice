@@ -51,15 +51,17 @@ import Usecontext from "./topics/hooks/context/Usecontext"
 import Usememo from "./topics/hooks/callback/Usememo";
 import Usecallback from "./topics/hooks/callback/Usecallback"
 import CountVowels from './dev/coding/CountVowels';
-import { ArraysL } from './leetcode/75/ArraysL';
-import { Css } from './Css';
+import  ArraysL  from './leetcode/75/array/ArraysL';
+import { Css } from './css/Css';
 import Freecodecamp from './freecodecamp/Freecodecamp';
+import Projects from './gpt/projects/Projects';
+import Dev from './dev/Dev';
 //import { Rotatearray } from './codility/Rotatearray';
 //import School from './geeksforgeeks/zoho/school/School';
 //import Basic from './geeksforgeeks/zoho/basic/Basic';
 const routes = [
     {
-        path: '/dashboard',
+        path: '/',
         exact: true,
         element: <Dashboard/>
       },
@@ -138,11 +140,7 @@ const routes = [
     exact: true,
     element: <MediumCode/>
   },
-  // {
-  //   path: '/cordility/rotationarray',
-  //   exact: true,
-  //   element: <Rotatearray/>
-  // },
+ 
   // {
   //   path: '/geeks/zoho/school',
   //   exact: true,
@@ -159,6 +157,11 @@ const routes = [
     element: <CountVowels/>
   },
   {
+    path: '/dev',
+    exact: true,
+    element: <Dev/>
+  },
+  {
     path: '/leetcode/75/array',
     exact: true,
     element: <ArraysL/>
@@ -172,6 +175,11 @@ const routes = [
     path: '/freecodecamp',
     exact: true,
     element: <Freecodecamp/>
+  },
+  {
+    path: '/gpt',
+    exact: true,
+    element: <Projects/>
   },
 ];
 

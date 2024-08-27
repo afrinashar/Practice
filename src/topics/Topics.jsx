@@ -1,20 +1,29 @@
-import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+ import { Link } from 'react-router-dom';
+import Card from '../assets/Card'; // Import the custom card component
+
 const Topics = () => {
-  const collection =[
-    {"name":"Hooks", "link":"/hooks"},
-    {"name":"Passing Data", "link":"/passdata"},
+  const collection = [
+    { "name": "Hooks", "link": "/hooks" },
+    { "name": "Passing Data", "link": "/passdata" },
+  ];
 
-  ]
-  return (<>
-    <div>Topics</div>
-   {  collection.map((data ,index) =>{ return (<Card key={index}><Card.Title>{data.name}</Card.Title>
-        <Card.Text>
-          Click below
-        </Card.Text>
-        <Link to={data.link} variant="btn btn-success">Topics</Link></Card>)})}
-    <img  height={200} width={400} src='https://miro.medium.com/v2/resize:fit:1400/format:webp/1*imIl35EDoLGvSQRvDJJiHQ.png'></img>
- </> )
-}
+  return (
+    <>
+      <div>Topics</div>
+      {collection.map((data, index) => (
+        <Card
+          key={index}
+          title={data.name}
+          text="Click below"
+          link={data.link}
+          linkText="Topics"
+          cardStyle={{ borderColor: '#28a745', borderWidth: '2px' }} // Example of inline style customization
+          buttonStyle={{ backgroundColor: '#28a745', color: '#fff' }} // Button style customization
+        />
+      ))}
+      
+    </>
+  );
+};
 
-export default Topics
+export default Topics;
