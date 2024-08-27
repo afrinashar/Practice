@@ -1,0 +1,112 @@
+/* GridDemo.css */
+
+.grid-demo {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .dropdown-container {
+    margin-bottom: 20px;
+  }
+  
+  .grid-container {
+    display: grid;
+    width: 80%;
+    margin: 0 auto;
+    height: 80%;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .grid-item {
+    background-color: #011655;
+    color: white;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    height: 50px;
+    box-sizing: border-box;
+  }
+  
+  /* Grid Structure Classes */
+  .two-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .three-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .four-columns {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Align Items Classes */
+  .start {
+    align-items: start;
+  }
+  
+  .center {
+    align-items: center;
+  }
+  
+  .end {
+    align-items: end;
+  }
+  
+  .stretch {
+    align-items: stretch;
+  }
+  
+  /* Justify Items Classes */
+  .start {
+    justify-items: start;
+  }
+  
+  .center {
+    justify-items: center;
+  }
+  
+  .end {
+    justify-items: end;
+  }
+  
+  .stretch {
+    justify-items: stretch;
+  }
+  
+  /* Grid Gap Classes */
+  .no-gap {
+    gap: 0px;
+  }
+  
+  .small-gap {
+    gap: 10px;
+  }
+  
+  .medium-gap {
+    gap: 20px;
+  }
+  
+  .large-gap {
+    gap: 30px;
+  }
+  
+  /* Grid Auto Flow Classes */
+  .row {
+    grid-auto-flow: row;
+  }
+  
+  .column {
+    grid-auto-flow: column;
+  }
+  
+  .dense {
+    grid-auto-flow: dense;
+  }
+  

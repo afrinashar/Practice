@@ -1,0 +1,112 @@
+/* CssDemo.css */
+
+.css-demo {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .controls {
+    margin-bottom: 20px;
+  }
+  
+  /* Container for demo elements */
+  .demo-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    position: relative; /* Required for modal positioning */
+  }
+  
+  /* Link Styles */
+  .links .demo-link {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #011655;
+    border: 2px solid #011655;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .links .demo-link:hover {
+    background-color: #011655;
+    color: white;
+  }
+  
+  /* Button Styles */
+  .buttons .demo-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #011655;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .buttons .demo-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+  }
+  
+  /* Modal Styles */
+  .modals .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modals .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .modals .modal-close {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .modals .modal-close:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Alignment Styles */
+  .center {
+    text-align: center;
+  }
+  
+  .start {
+    text-align: left;
+  }
+  
+  .end {
+    text-align: right;
+  }
+  
+  /* Flexbox Alignment for Modal */
+  .modals .modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
