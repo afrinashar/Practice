@@ -56,10 +56,19 @@ import { Css } from './css/Css';
 import Freecodecamp from './freecodecamp/Freecodecamp';
 import Projects from './gpt/projects/Projects';
 import Dev from './dev/Dev';
+import { Leetcode75 } from './leetcode/75/Leetcode75';
+import { Leetcode } from './leetcode/Leetcode';
+import { Javascript } from './javascript/Javascript';
+import PageNotFound from './components/PageNotFound';
 //import { Rotatearray } from './codility/Rotatearray';
 //import School from './geeksforgeeks/zoho/school/School';
 //import Basic from './geeksforgeeks/zoho/basic/Basic';
 const routes = [
+  {
+    path: '*',
+    exact: true,
+    element: <PageNotFound/>
+  },
     {
         path: '/',
         exact: true,
@@ -162,9 +171,9 @@ const routes = [
     element: <Dev/>
   },
   {
-    path: '/leetcode/75/array',
+    path: '/leetcode',
     exact: true,
-    element: <ArraysL/>
+    element: <Leetcode/>
   },
   {
     path: '/css',
@@ -180,6 +189,11 @@ const routes = [
     path: '/gpt',
     exact: true,
     element: <Projects/>
+  },
+  {
+    path: '/javascript',
+    exact: true,
+    element: <Javascript/>
   },
 ];
 

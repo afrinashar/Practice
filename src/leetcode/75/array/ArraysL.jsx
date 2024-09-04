@@ -8,7 +8,7 @@ import { ReverseWords } from './ReverseWords';
 import { ProductExceptSelf } from './ProductExceptSelf';
 import { IncreasingTriplet } from './IncreasingTriplet';
 import { StringCompression } from './StringCompression';
-import './ArraysL.css'; // Assuming CSS is in the same directory
+import './ArraysL.css';
 
 const ArraysL = () => {
     const [word1, setWord1] = useState('');

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+ import { Container, Row, Col } from 'react-bootstrap';
 import Card from './assets/Card'; // Adjust the path as necessary
 
 export const Dashboard = () => {
@@ -45,9 +44,9 @@ export const Dashboard = () => {
 
            <Col sm={12} md={6} lg={4} className="mb-4">
             <Card
-              title="Methods"
+              title="Topics"
               text="Learn about different methods and techniques."
-              link="/methods"
+              link="/topics"
               linkText="Go to Methods"
               cardStyle={{ borderColor: '#fff', borderWidth: '2px' }}
               buttonStyle={{ backgroundColor: '#17a2b8', color: '#fff' }}
@@ -71,6 +70,18 @@ export const Dashboard = () => {
               linkText="Go to CSS"
               cardStyle={{ borderColor: '#fff', borderWidth: '2px' }}
               buttonStyle={{ backgroundColor: '#011655', color: '#fff' }}
+            />
+          </Col>
+        </Row>
+        <Row>
+        <Col sm={12} md={6} lg={4} className="mb-4">
+            <Card
+              title="Javascript"
+              text="Javascript loics."
+              link="/javascript"
+              linkText="Go to JS"
+              cardStyle={{ borderColor: '#fff', borderWidth: '2px' }}
+              buttonStyle={{ backgroundColor: ' radial-gradient(circle, rgb(158, 229, 255) 0%, rgb(0, 55, 128) 100%)', color: '#fff' }}
             />
           </Col>
         </Row>

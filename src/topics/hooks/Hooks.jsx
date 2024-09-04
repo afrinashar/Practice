@@ -23,7 +23,7 @@ const Hooks = () => {
   ];
 
   const collection4 = [
-    { "name": "Callback", "link": "/hooks/callback" },
+    { "name": "Callback", "link": "/hooks/usecallback" },
     { "name": "useMemo", "link": "/hooks/usememo" },
   ];
 

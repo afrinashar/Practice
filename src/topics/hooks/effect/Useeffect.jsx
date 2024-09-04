@@ -1,5 +1,6 @@
 import   { useState, useEffect } from 'react';
-
+import Data from '../../Data';
+import CodeBase from '../../../assets/CodeBase';
 function Example() {
   const [data, setData] = useState(null);
 
@@ -25,8 +26,17 @@ function Example() {
       // This is optional but important to prevent memory leaks
     };
   }, []); // Empty dependency array, so the effect runs only once on component mount
+  const useeffect = Data.find(item => item.type === 'useeffect') || { header: 'useeffect', content: '' };
 
-  return <div>{data ? <p>Data: {data}</p> : <p>Loading data...</p>}</div>;
+  return <div>{data ? <p>Data: {data}</p> : <p>Loading data...</p>}
+  
+  <div className="col mb-4">
+        <div style={{ backgroundColor: '#ffc107', color: '#fff' }} className="col ">
+          <h2 className="text-light mb-2">{useeffect.header}</h2>
+          <CodeBase header={useeffect.header} content={useeffect.content} />
+        </div>
+      </div>
+  </div>;
 }
 
 export default Example;

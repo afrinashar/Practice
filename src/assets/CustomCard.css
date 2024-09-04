@@ -5,6 +5,8 @@
     transition: transform 0.2s ease-in-out;
     padding: 20px;
     margin: 10px;
+    border:19mm ridge black;
+    
   }
   
   .custom-card:hover {

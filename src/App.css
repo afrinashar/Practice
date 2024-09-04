@@ -42,3 +42,25 @@
 .read-the-docs {
   color: #888;
 }
+ .dashboard-button-side{
+  background: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgb(158, 229, 255) 0%, rgb(0, 55, 128) 100%);    color: white;
+    border: 2mm ridge rgb(255, 255, 255) !important;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-style: azure;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0); 
+ }
+ .dashboard-button{
+  background: rgb(198,197,197);
+    background: radial-gradient(circle, rgba(198,197,197,1) 0%, rgb(37, 35, 35) 100%);    color: white;
+    border: 2mm ridge white !important;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color :aliceblue !important;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0); 
+ }

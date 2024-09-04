@@ -1,0 +1,17 @@
+.main-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-bottom: 10px;
+}
+
+strong {
+    display: block;
+    margin-top: 10px;
+}
