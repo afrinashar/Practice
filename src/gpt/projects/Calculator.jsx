@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../../assets/Button";
 import "./Calculator.css";
-
+import CodeBase from "../../assets/CodeBase";
 const Calculator = () => {
   const [input, setInput] = useState("");
 
@@ -16,6 +16,7 @@ const Calculator = () => {
       setInput("Error");
     }
   };
+ // const usestate = Data.find(item => item.type === 'usestate') || { header: 'usestate', content: '' };
 
   return (
     <div className="calculator-container">
@@ -49,6 +50,8 @@ const Calculator = () => {
           />
         ))}
       </div>
+      {/* <CodeBase header={usestate.header} content={usestate.content} /> */}
+
     </div>
   );
 };

@@ -84,6 +84,16 @@ export const Dashboard = () => {
               buttonStyle={{ backgroundColor: ' radial-gradient(circle, rgb(158, 229, 255) 0%, rgb(0, 55, 128) 100%)', color: '#fff' }}
             />
           </Col>
+          <Col sm={12} md={6} lg={4} className="mb-4">
+            <Card
+              title="DSA"
+              text="Javascript loics."
+              link="/dsa"
+              linkText="Go to DSA"
+              cardStyle={{ borderColor: '#fff', borderWidth: '2px' }}
+              buttonStyle={{ backgroundColor: ' radial-gradient(circle, rgb(18, 22, 25) 0%, rgb(0, 55, 18) 100%)', color: '#fff' }}
+            />
+          </Col> 
         </Row>
       </Container>
     </>

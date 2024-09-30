@@ -119,16 +119,126 @@ export default Example;
 `
 },
 {
-    type:"", header:"", content:``
+    type:"usereducer", header:"Use Reducer", content:`import   { useReducer } from 'react';
+
+const initialState = { count: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    case 'reset':
+      return initialState;
+    default:
+      throw new Error('Unsupported action type');
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const increment = () => {
+    dispatch({ type: 'increment' });
+  };
+
+  const decrement = () => {
+    dispatch({ type: 'decrement' });
+  };
+
+  const reset = () => {
+    dispatch({ type: 'reset' });
+  };
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+      <button onClick={reset}>Reset</button>
+    </div>
+  );
+}
+export default Counter;`
 },
 {
-    type:"", header:"", content:``
+    type:"useref", header:"Use Ref", content:` import { useRef } from "react"
+export const Useref = () => {
+    const refContainer = useRef(null)
+    const divContainer = useRef(null)
+    const handleSubmit = (e ) => {
+        e.preventDefault()
+     console.log(refContainer.current.value)
+     console.log(divContainer.current)
+    }
+     
+    return (
+      <>
+        <form onSubmit= {handleSubmit}>
+          <div>
+             <input type="text" ref={refContainer} />
+          </div>
+          <div ref={divContainer}> </div>
+        </form>
+     {refContainer.current.value} 
+     <img src="https://img.freepik.com/free-photo/colorful-design-with-spiral-design_188544-9588.jpg"></img>
+     </>
+    )
+    } 
+`
 },
 {
-    type:"", header:"", content:``
+    type:"uselayout", header:"Use Layout", content:`import  { useState, useLayoutEffect } from 'react';
+
+function Example() {
+  const [width, setWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    // This effect runs synchronously after all DOM mutations
+    // but before the browser paints
+
+    const updateWidth = () => {
+      const newWidth = document.documentElement.clientWidth;
+      setWidth(newWidth);
+    };
+
+    // Add event listener for window resize
+    window.addEventListener('resize', updateWidth);
+
+    // Initial width update
+    updateWidth();
+
+    // Clean up the effect
+    return () => {
+      // Remove event listener
+      window.removeEventListener('resize', updateWidth);
+    };
+  }, []); // Empty dependency array, so the effect runs only once on component mount
+
+  return <><div>Window width: {width}px</div>‘useLayoutEffect’: Similar to ‘useEffect’, but runs synchronously after all DOM mutations are applied, useful for measuring layout or performing DOM manipulations that require synchronous updates.</>;
+}
+
+export default Example;`
 },
 {
-    type:"", header:"", content:``
+    type:"useeffectonce", header:"UseEffect Once", content:`import  { useEffect } from 'react';
+
+function useEffectOnce(effect) {
+  useEffect(effect, []);
+}
+
+// Usage:
+function Example() {
+  useEffectOnce(() => {
+    // This effect runs only once on component mount
+    console.log('Effect ran only once');
+  });
+
+  return <> <div>Example Component</div>‘useEffectOnce’: A custom hook that runs an effect only once when the component mounts.</>;
+}
+
+export default Example;`
 },
 {
     type:"", header:"", content:``

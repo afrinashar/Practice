@@ -39,7 +39,7 @@ import  MediumCode  from './Medium/MediumCode';
 //import SearchComponent from './dsa/Search';
 //import   { Sort } from './dsa/Sort';
 //import FibonacciCalculator from './dsa/Fibonaci';
-import { Useref } from './topics/hooks/ref/Useref';
+import Useref  from './topics/hooks/ref/Useref';
 import Topics from './topics/Topics';
 import Usestate from "./topics/hooks/state/Usestate"
 import Usereducer from "./topics/hooks/state/Usereducer"
@@ -51,15 +51,14 @@ import Usecontext from "./topics/hooks/context/Usecontext"
 import Usememo from "./topics/hooks/callback/Usememo";
 import Usecallback from "./topics/hooks/callback/Usecallback"
 import CountVowels from './dev/coding/CountVowels';
-import  ArraysL  from './leetcode/75/array/ArraysL';
 import { Css } from './css/Css';
 import Freecodecamp from './freecodecamp/Freecodecamp';
 import Projects from './gpt/projects/Projects';
 import Dev from './dev/Dev';
-import { Leetcode75 } from './leetcode/75/Leetcode75';
-import { Leetcode } from './leetcode/Leetcode';
+ import { Leetcode } from './leetcode/Leetcode';
 import { Javascript } from './javascript/Javascript';
 import PageNotFound from './components/PageNotFound';
+import Dsa from './dsa/Dsa';
 //import { Rotatearray } from './codility/Rotatearray';
 //import School from './geeksforgeeks/zoho/school/School';
 //import Basic from './geeksforgeeks/zoho/basic/Basic';
@@ -194,6 +193,11 @@ const routes = [
     path: '/javascript',
     exact: true,
     element: <Javascript/>
+  },
+  {
+    path: '/dsa',
+    exact: true,
+    element: <Dsa/>
   },
 ];
 
