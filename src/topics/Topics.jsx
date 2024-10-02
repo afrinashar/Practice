@@ -1,5 +1,6 @@
  import { Link } from 'react-router-dom';
 import Card from '../assets/Card'; // Import the custom card component
+import SetTopics from './SetTopics';
 
 const Topics = () => {
   const collection = [
@@ -21,7 +22,7 @@ const Topics = () => {
           buttonStyle={{ backgroundColor: '#28a745', color: '#fff' }} // Button style customization
         />
       ))}
-      
+      <SetTopics/>
     </>
   );
 };

@@ -94,6 +94,48 @@ export const Dashboard = () => {
               buttonStyle={{ backgroundColor: ' radial-gradient(circle, rgb(18, 22, 25) 0%, rgb(0, 55, 18) 100%)', color: '#fff' }}
             />
           </Col> 
+          <Col sm={12} md={6} lg={4} className="mb-4">
+            <Card
+              title="Node"
+              text="Node js questions."
+              link="/node"
+              linkText="Go to node"
+              cardStyle={{ borderColor: '#fff', borderWidth: '2px' }}
+              buttonStyle={{ backgroundColor: ' radial-gradient(circle, rgb(18, 22, 25) 0%, rgb(0, 55, 18) 100%)', color: '#fff' }}
+            />
+          </Col> 
+        </Row>
+        <Row>
+        <Col sm={12} md={6} lg={4} className="mb-4">
+            <Card
+              title="Native"
+              text="react native loics."
+              link="/native"
+              linkText="Go to native"
+              cardStyle={{ borderColor: '#fff', borderWidth: '2px' }}
+              buttonStyle={{ backgroundColor: ' radial-gradient(circle, rgb(158, 229, 255) 0%, rgb(0, 55, 128) 100%)', color: '#fff' }}
+            />
+          </Col>
+          <Col sm={12} md={6} lg={4} className="mb-4">
+            <Card
+              title="AI"
+              text="AI conceptsai."
+              link="/ai"
+              linkText="Go to AI"
+              cardStyle={{ borderColor: '#fff', borderWidth: '2px' }}
+              buttonStyle={{ backgroundColor: ' radial-gradient(circle, rgb(18, 22, 25) 0%, rgb(0, 55, 18) 100%)', color: '#fff' }}
+            />
+          </Col> 
+          <Col sm={12} md={6} lg={4} className="mb-4">
+            <Card
+              title="What i learn today "
+              text="new things i learn from daytoday "
+              link="/today"
+              linkText="Go to today"
+              cardStyle={{ borderColor: '#fff', borderWidth: '2px' }}
+              buttonStyle={{ backgroundColor: ' radial-gradient(circle, rgb(18, 22, 25) 0%, rgb(0, 55, 18) 100%)', color: '#fff' }}
+            />
+          </Col> 
         </Row>
       </Container>
     </>

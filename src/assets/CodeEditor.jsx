@@ -1,4 +1,3 @@
-// CodeEditor.js
 import { useRef, useState, useEffect } from "react";
 import Editor, { useMonaco } from "@monaco-editor/react";
 
@@ -14,6 +13,7 @@ const CodeEditor = ({ codings }) => {
     lineNumbers: "on",
     wordWrap: "on",
   });
+  const [output, setOutput] = useState(""); // Output of the code execution
 
   const handleEditorDidMount = (editor) => {
     editorRef.current = editor;
@@ -53,6 +53,21 @@ const CodeEditor = ({ codings }) => {
       });
     }
   }, [monaco]);
+
+  // Function to execute the code
+  const runCode = () => {
+    try {
+      // Only for JavaScript: use eval to run the code
+      if (language === "javascript") {
+        const result = eval(code); // Evaluates JavaScript code
+        setOutput(result !== undefined ? result.toString() : "No output");
+      } else {
+        setOutput("Execution for this language is not supported.");
+      }
+    } catch (err) {
+      setOutput(`Error: ${err.message}`);
+    }
+  };
 
   return (
     <div>
@@ -96,10 +111,12 @@ const CodeEditor = ({ codings }) => {
             onChange={(e) => updateEditorOption("minimap", { enabled: e.target.checked })}
           />
         </label>
+
+        <button onClick={runCode}>Run</button> {/* Button to execute the code */}
       </div>
 
       <Editor
-        height="80vh"
+        height="60vh"
         language={language}
         value={code}
         onChange={handleCodeChange}
@@ -107,6 +124,12 @@ const CodeEditor = ({ codings }) => {
         options={editorOptions}
         theme={theme}
       />
+
+      {/* Output Section */}
+      <div style={{ marginTop: "10px" }}>
+        <h3>Output:</h3>
+        <pre>{output}</pre>
+      </div>
     </div>
   );
 };

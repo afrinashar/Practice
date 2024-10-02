@@ -32,8 +32,6 @@ import { Dashboard } from './Dashboard'
 // import   Question8Advance  from './codeInterview/advance/Question8'
 // import   Question9Advance   from './codeInterview/advance/Question9'
 // import   Question10Advance   from './codeInterview/advance/Question10'
- import { Pagination } from './Rcoder/Pagination';
-  import { Progress } from './Rcoder/Progress';
 // import { Components } from './assets/Components';
 import  MediumCode  from './Medium/MediumCode';
 //import SearchComponent from './dsa/Search';
@@ -59,6 +57,11 @@ import Dev from './dev/Dev';
 import { Javascript } from './javascript/Javascript';
 import PageNotFound from './components/PageNotFound';
 import Dsa from './dsa/Dsa';
+import Node from './node/Node';
+//  import Native from './native/Native';
+import { Ai } from './ai/Ai';
+import Native from './native/Native';
+import Today from './Today';
 //import { Rotatearray } from './codility/Rotatearray';
 //import School from './geeksforgeeks/zoho/school/School';
 //import Basic from './geeksforgeeks/zoho/basic/Basic';
@@ -198,6 +201,26 @@ const routes = [
     path: '/dsa',
     exact: true,
     element: <Dsa/>
+  },
+  {
+    path: '/node',
+    exact: true,
+    element: <Node/>
+  },
+  {
+    path: '/native',
+    exact: true,
+    element: <Native/>
+  },
+  {
+    path: '/ai',
+    exact: true,
+    element: <Ai/>
+  },
+  {
+    path: '/today',
+    exact: true,
+    element: <Today/>
   },
 ];
 
