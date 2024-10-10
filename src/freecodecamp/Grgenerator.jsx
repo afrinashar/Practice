@@ -13,8 +13,10 @@ setGenerate(input)
       onChange={(e)=>setInput(e.target.value)}
       type='input'
       name='qr-code'
-      /> <button onClick={handleGenerate}>Generate</button></div>
-      <div><QRCode   /></div>
+      /> <button onClick={handleGenerate}      disabled={input.trim()=="" ? true: false}
+>Generate</button></div>
+      <div><QRCode value={generate} /></div>
+       
     </div>
   )
 }
