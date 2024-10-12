@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import   { useState } from 'react';
 import './HashMap.css'; // Ensure you have appropriate CSS styles
 
 const HashMap = () => {
@@ -40,25 +40,33 @@ const HashMap = () => {
             const key = row.join(',');
             count[key] = (count[key] || 0) + 1;
         }
+    
+        // Check if arr is a valid 2D array
+        if (!arr.length || !arr[0]) {
+            return 0; // Return 0 if the array is not a valid 2D array
+        }
+    
         const transposed = arr[0].map((_, colIndex) => arr.map(row => row[colIndex]));
+        
         let pairs = 0;
         for (const row of transposed) {
             const key = row.join(',');
             pairs += count[key] || 0;
         }
+    
         return pairs;
     };
-
+    
     const componentContent = {
         "Find the Difference of Two Arrays": (
             <>
                 <input
                     placeholder="Enter first array (comma-separated)"
-                    onChange={e => setArray1(e.target.value.split(',').map(Number))}
+                    onChange={e => setArray1(e.target.value.split(',')?.map(Number))}
                 />
                 <input
                     placeholder="Enter second array (comma-separated)"
-                    onChange={e => setArray2(e.target.value.split(',').map(Number))}
+                    onChange={e => setArray2(e.target.value.split(',')?.map(Number))}
                 />
                 <button onClick={findDifference}>Calculate Difference</button>
                 <p>Difference 1: {JSON.stringify(findDifference().diff1)}</p>
@@ -69,7 +77,7 @@ const HashMap = () => {
             <>
                 <input
                     placeholder="Enter numbers (comma-separated)"
-                    onChange={e => setArr(e.target.value.split(',').map(Number))}
+                    onChange={e => setArr(e.target.value.split(',')?.map(Number))}
                 />
                 <button onClick={uniqueOccurrences}>Check Unique Occurrences</button>
                 <p>Result: {uniqueOccurrences() ? "True" : "False"}</p>
@@ -94,7 +102,7 @@ const HashMap = () => {
                 <input
                     placeholder="Enter 2D array (comma-separated rows)"
                     onChange={e => {
-                        const rows = e.target.value.split(';').map(row => row.split(',').map(Number));
+                        const rows = e.target.value.split(';')?.map(row => row.split(',')?.map(Number));
                         setArr(rows);
                     }}
                 />
@@ -135,7 +143,7 @@ const HashMap = () => {
             {sidebarVisible && (
                 <div className="sidebar">
                     <button onClick={toggleSidebar} className="toggle-sidebar-btn">▲ Hide Sidebar</button>
-                    {components.map((component, index) => (
+                    {components?.map((component, index) => (
                         <h6 key={index} onClick={() => setSelectedComponent(component)}>
                             {component}
                         </h6>

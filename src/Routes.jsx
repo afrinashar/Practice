@@ -62,6 +62,7 @@ import Node from './node/Node';
 import { Ai } from './ai/Ai';
 import Native from './native/Native';
 import Today from './Today';
+import Links from './Links';
 //import { Rotatearray } from './codility/Rotatearray';
 //import School from './geeksforgeeks/zoho/school/School';
 //import Basic from './geeksforgeeks/zoho/basic/Basic';
@@ -221,6 +222,11 @@ const routes = [
     path: '/today',
     exact: true,
     element: <Today/>
+  },
+  {
+    path: '/links',
+    exact: true,
+    element: <Links/>
   },
 ];
 
