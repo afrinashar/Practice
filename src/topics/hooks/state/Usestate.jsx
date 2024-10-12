@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-import { useState } from 'react';
-
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  const increment = () => {
-    setCount(count + 1);
-  };
-
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={increment}>Increment</button>
-
-
-      ‘useState’: It is the most commonly used React Hook. It allows functional components to have state variables. It takes an initial state value as the argument and returns an array with two elements — the current state value and a function to update that state.
-    </div>
-  );
-}
-=======
 import { useState } from 'react';
 import Data from '../../Data';
 import CodeBase from '../../../assets/CodeBase';
@@ -47,5 +26,4 @@ function Counter() {
     </div>
   );
 }
->>>>>>> 40d3f5c578858cb4d8da71bbb6a2db7ab3b0c574
 export default Counter
