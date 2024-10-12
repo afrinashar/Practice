@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Flex.css */
 
 .flexbox-demo {
@@ -131,4 +132,139 @@
   .justify-space-evenly {
     justify-content: space-evenly;
   }
+=======
+/* Flex.css */
+
+.flexbox-demo {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .dropdown-container {
+    margin-bottom: 20px;
+  }
+  
+  .flex-container {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    height: 300px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .flex-item {
+    background-color: #011655;
+    color: white;
+    border: 2px solid #333;
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: 50px;
+  }
+  
+  /* Main Flex Operation Classes */
+  .row {
+    flex-direction: row;
+  }
+  
+  .row-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .column {
+    flex-direction: column;
+  }
+  
+  .column-reverse {
+    flex-direction: column-reverse;
+  }
+  
+  .grow .flex-item {
+    flex-grow: 1;
+  }
+  
+  .shrink .flex-item {
+    flex-shrink: 1;
+  }
+  
+  .basis .flex-item {
+    flex-basis: 100px;
+  }
+  
+  .order .flex-item:nth-child(1) {
+    order: 3;
+  }
+  
+  .order .flex-item:nth-child(2) {
+    order: 1;
+  }
+  
+  .order .flex-item:nth-child(3) {
+    order: 2;
+  }
+  
+  /* Flex Wrap Classes */
+  .nowrap {
+    flex-wrap: nowrap;
+  }
+  
+  .wrap {
+    flex-wrap: wrap;
+  }
+  
+  .wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+  
+  /* Align Items Classes */
+  .align-start {
+    align-items: flex-start;
+  }
+  
+  .align-center {
+    align-items: center;
+  }
+  
+  .align-end {
+    align-items: flex-end;
+  }
+  
+  .align-stretch {
+    align-items: stretch;
+  }
+  
+  .align-baseline {
+    align-items: baseline;
+  }
+  
+  /* Justify Content Classes */
+  .justify-start {
+    justify-content: flex-start;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .justify-end {
+    justify-content: flex-end;
+  }
+  
+  .justify-space-between {
+    justify-content: space-between;
+  }
+  
+  .justify-space-around {
+    justify-content: space-around;
+  }
+  
+  .justify-space-evenly {
+    justify-content: space-evenly;
+  }
+>>>>>>> 40d3f5c578858cb4d8da71bbb6a2db7ab3b0c574
   

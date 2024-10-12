@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .arraysl-container {
     display: flex;
 }
@@ -54,3 +55,61 @@
 .btn-secondary:hover {
     background-color: #2708b4;
 }
+=======
+.arraysl-container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar h6 {
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.sidebar h6:hover {
+    background-color: #ddd;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.toggle-sidebar-btn,
+.show-sidebar-btn {
+    background-color: #3001d9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    background-color: #0f09b3;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #2708b4;
+}
+>>>>>>> 40d3f5c578858cb4d8da71bbb6a2db7ab3b0c574

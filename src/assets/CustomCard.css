@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .custom-card {
     background-color: #fff;
     border-radius: 8px;
@@ -37,4 +38,47 @@
   .custom-card-button:hover {
     background-color: #0056b3;
   }
+=======
+.custom-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    padding: 20px;
+    margin: 10px;
+    border:19mm ridge black;
+    
+  }
+  
+  .custom-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .custom-card-body {
+    text-align: center;
+  }
+  
+  .custom-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .custom-card-text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .custom-card-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .custom-card-button:hover {
+    background-color: #0056b3;
+  }
+>>>>>>> 40d3f5c578858cb4d8da71bbb6a2db7ab3b0c574
   

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -42,3 +43,71 @@
 .read-the-docs {
   color: #888;
 }
+=======
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100vw;
+  background-color: #d6e8ff;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+ .dashboard-button-side{
+  background: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgb(158, 229, 255) 0%, rgb(0, 55, 128) 100%);    color: white;
+    border: 2mm ridge rgb(255, 255, 255) !important;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-style: azure;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0); 
+ }
+ .dashboard-button{
+  background: rgb(198,197,197);
+    background: radial-gradient(circle, rgba(198,197,197,1) 0%, rgb(37, 35, 35) 100%);    color: white;
+    border: 2mm ridge white !important;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color :aliceblue !important;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0); 
+ }
+>>>>>>> 40d3f5c578858cb4d8da71bbb6a2db7ab3b0c574

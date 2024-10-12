@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* CssFunctionsDemo.css */
 
 :root {
@@ -84,4 +85,92 @@
   .max .content-box {
     width: max(200px, 50%); /* Example max */
   }
+=======
+/* CssFunctionsDemo.css */
+
+:root {
+    --primary-bg-color: #f0f0f0;
+    --primary-text-color: #333;
+    --primary-border-color: #ddd;
+    --primary-content-bg: #f04779;
+    --dark-bg-color: #333;
+    --dark-text-color: #f0f0f0;
+    --dark-border-color: #555;
+    --dark-content-bg: #ff58ae;
+  }
+  
+  .css-functions-demo {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .light-mode {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+  }
+  
+  .dark-mode {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+  }
+  
+  .controls {
+    margin-bottom: 20px;
+  }
+  
+  .demo-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid var(--primary-border-color);
+    box-sizing: border-box;
+    background-color: var(--primary-bg-color);
+  }
+  
+  .content-box {
+    background-color: var(--primary-content-bg);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    border: 2px solid #333;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  /* CSS Function Simulation Classes */
+  
+  /* calc() Function */
+  .calc .content-box {
+    width: calc(50% + 100px); /* Example calculation */
+  }
+  
+  /* var() Function */
+  .var {
+    --box-width: 200px;
+  }
+  
+  .var .content-box {
+    width: var(--box-width);
+  }
+  
+  /* clamp() Function */
+  .clamp .content-box {
+    width: clamp(150px, 25%, 300px); /* Example clamp */
+  }
+  
+  /* min() Function */
+  .min .content-box {
+    width: min(100%, 250px); /* Example min */
+  }
+  
+  /* max() Function */
+  .max .content-box {
+    width: max(200px, 50%); /* Example max */
+  }
+>>>>>>> 40d3f5c578858cb4d8da71bbb6a2db7ab3b0c574
   

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ResponsiveImageDemo.css */
 
 .responsive-image-demo {
@@ -51,4 +52,59 @@
     height: auto;
     /* No specific style for srcset; it's about providing different sources in HTML */
   }
+=======
+/* ResponsiveImageDemo.css */
+
+.responsive-image-demo {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .controls {
+    margin-bottom: 20px;
+  }
+  
+  .demo-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+  }
+  
+  .responsive-image {
+    border: 2px solid #011655;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Percentage Width */
+  .percentage .responsive-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Max Width */
+  .max-width .responsive-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Object Fit */
+  .object-fit .responsive-image {
+    width: 100%;
+    height: 300px; /* Fixed height for demo */
+    object-fit: cover;
+  }
+  
+  /* Srcset and Sizes */
+  .srcset .responsive-image {
+    width: 100%;
+    height: auto;
+    /* No specific style for srcset; it's about providing different sources in HTML */
+  }
+>>>>>>> 40d3f5c578858cb4d8da71bbb6a2db7ab3b0c574
   

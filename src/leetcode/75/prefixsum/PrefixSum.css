@@ -1,0 +1,77 @@
+/* PrefixSum.css */
+
+.prefix-sum-container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-right: 1px solid #ddd;
+    height: 100vh;
+    position: fixed;
+}
+
+.toggle-sidebar-btn, .show-sidebar-btn {
+    background-color: #ff6f61; /* Light red background */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.sidebar h6 {
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.sidebar h6:hover {
+    background-color: #ddd;
+}
+
+.show-sidebar-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+}
+
+input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff; /* Blue background for buttons */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.navigation-buttons {
+    margin-top: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}

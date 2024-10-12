@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* CssFunctionsDemo.css */
 
 .css-functions-demo {
@@ -106,4 +107,114 @@
     width: max(200px, 20vw);
     height: max(150px, 15vh);
   }
+=======
+/* CssFunctionsDemo.css */
+
+.css-functions-demo {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .dropdown-container {
+    margin-bottom: 20px;
+  }
+  
+  .demo-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+  }
+  
+  .content-box {
+    background-color: #8e6b00;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    border: 2px solid #333;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  /* CSS Function Simulation Classes */
+  
+  /* calc() Function */
+  .calc .content-box {
+    width: calc(50% + 100px); /* Example calculation */
+  }
+  
+  /* var() Function */
+  .var {
+    --box-width: 200px;
+  }
+  
+  .var .content-box {
+    width: var(--box-width);
+  }
+  
+  /* clamp() Function */
+  .clamp .content-box {
+    width: clamp(150px, 25%, 300px); /* Example clamp */
+  }
+  
+  /* min() Function */
+  .min .content-box {
+    width: min(100%, 250px); /* Example min */
+  }
+  
+  /* max() Function */
+  .max .content-box {
+    width: max(200px, 50%); /* Example max */
+  }
+  .css-functions {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .dropdown-container {
+    margin-bottom: 20px;
+  }
+  
+  .content-box {
+    background-color: #856001;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: width 0.3s, height 0.3s;
+  }
+  
+  .box-container.calc .content-box {
+    width: calc(50% + 100px);
+    height: calc(50% + 50px);
+  }
+  
+  .box-container.var .content-box {
+    --box-width: 300px;
+    --box-height: 200px;
+    width: var(--box-width);
+    height: var(--box-height);
+  }
+  
+  .box-container.clamp .content-box {
+    width: clamp(200px, 50%, 400px);
+    height: clamp(100px, 30%, 300px);
+  }
+  
+  .box-container.min .content-box {
+    width: min(80vw, 400px);
+    height: min(40vh, 300px);
+  }
+  
+  .box-container.max .content-box {
+    width: max(200px, 20vw);
+    height: max(150px, 15vh);
+  }
+>>>>>>> 40d3f5c578858cb4d8da71bbb6a2db7ab3b0c574
   
