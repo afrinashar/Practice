@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* CenteringDemo.css */
 
 .centering-demo {
@@ -69,76 +68,4 @@
     width: 150px; /* Define a fixed width */
     height: 150px; /* Define a fixed height */
   }
-=======
-/* CenteringDemo.css */
-
-.centering-demo {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .controls {
-    margin-bottom: 20px;
-  }
-  
-  .demo-container {
-    width: 80%;
-    height: 400px;
-    margin: 0 auto;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-    background-color: #f0f0f0;
-    position: relative; /* Required for absolute positioning */
-  }
-  
-  .content-box {
-    background-color: #011655;
-    color: white;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #333;
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  
-  /* Centering Methods */
-  
-  /* Flexbox */
-  .flex .content-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-  
-  /* Grid */
-  .grid {
-    display: grid;
-    place-items: center;
-  }
-  
-  .grid .content-box {
-    display: block; /* Make sure it's a block element for proper grid centering */
-  }
-  
-  /* Absolute Positioning */
-  .absolute .content-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  /* Margin Auto */
-  .margin .content-box {
-    position: relative;
-    margin: auto;
-    width: 150px; /* Define a fixed width */
-    height: 150px; /* Define a fixed height */
-  }
->>>>>>> 40d3f5c578858cb4d8da71bbb6a2db7ab3b0c574
   

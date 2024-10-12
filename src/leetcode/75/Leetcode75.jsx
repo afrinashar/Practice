@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import { ArraysL } from "./array/ArraysL"
-
- 
-export const Leetcode75 = () => {
-  return (
-    <div><ArraysL/></div>
-  )
-}
-=======
 import   { useState } from 'react';
 import ArraysL from "./array/ArraysL";
 import BackTracking from "./backtracking/BackTracking";
@@ -115,4 +105,3 @@ export const Leetcode75 = () => {
         </div>
     );
 };
->>>>>>> 40d3f5c578858cb4d8da71bbb6a2db7ab3b0c574

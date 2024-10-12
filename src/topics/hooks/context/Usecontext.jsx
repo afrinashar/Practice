@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import   { useContext } from 'react';
-import MyContext from './createContext';
-
-function ChildComponent() {
-  const contextValue = useContext(MyContext);
-
-  return <div>{contextValue}</div>;
-}
-=======
 import   { useContext } from 'react';
 import MyContext from './createContext';
 import CodeBase from '../../../assets/CodeBase';
@@ -23,5 +13,4 @@ function ChildComponent() {
         </div>
       </div></div>;
 }
->>>>>>> 40d3f5c578858cb4d8da71bbb6a2db7ab3b0c574
 export default ChildComponent
