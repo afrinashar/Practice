@@ -41,7 +41,7 @@ const DetailCard = ({ name, title, description, type, date, onEdit, onDelete }) 
   useEffect(() => {
     localStorage.setItem("links", JSON.stringify(links));
   }, [links]);
-
+  
   const getCurrentDateTime = () => {
     const now = new Date();
     return now.toLocaleString(); 
