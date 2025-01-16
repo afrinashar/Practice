@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import  { useState, useEffect } from 'react';
+import axios from 'axios';
+const API_BASE_URL = "https://practice-api-f02y.onrender.com/api/today";  
 
 const DetailCard = ({ name, description, date, onEdit, onDelete }) => {
   return (
@@ -8,7 +10,7 @@ const DetailCard = ({ name, description, date, onEdit, onDelete }) => {
         <h5 className="card-title">{name}</h5>
         <p className="card-text">{description}</p>
         <p className="card-text">
-          <small className="text-muted">Date: {date}</small>
+          <small className="text-muted">Date: {new Date(date).toLocaleString()}</small>
         </p>
         <div>
           <button className="btn btn-warning me-2" onClick={onEdit}>
@@ -23,65 +25,82 @@ const DetailCard = ({ name, description, date, onEdit, onDelete }) => {
   );
 };
 
+
 const AddNewComponentForm = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [components, setComponents] = useState(() => {
-    // Initialize from local storage if available
-    const storedComponents = localStorage.getItem("components");
-    return storedComponents ? JSON.parse(storedComponents) : [];
-  });
+   const [links, setLinks] = useState([]);
   const [isEditing, setIsEditing] = useState(null);
-
   // Store components in local storage on update
   useEffect(() => {
-    localStorage.setItem("components", JSON.stringify(components));
-  }, [components]);
+    const fetchLinks = async () => {
+      try {
+        const response = await axios.get(API_BASE_URL);
+        setLinks(response.data); // Assume API returns an array of links
+      } catch (error) {
+        console.error("Error fetching links:", error);
+      }
+    };
 
-  // Function to get current date and time
-  const getCurrentDateTime = () => {
-    const now = new Date();
-    return now.toLocaleString(); // Formats the date and time
-  };
+    fetchLinks();
+  }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const currentDateTime = getCurrentDateTime();
-
-    if (isEditing !== null) {
-      // If editing, update the specific component
-      const updatedComponents = components.map((component, index) =>
-        index === isEditing
-          ? { ...component, name, description }
-          : component
-      );
-      setComponents(updatedComponents);
-      setIsEditing(null);
-    } else {
-      // If not editing, add a new component
-      const newComponent = { name, description, date: currentDateTime };
-      setComponents([...components, newComponent]);
+  
+    const newLink = { name,  description,   date: new Date().toLocaleString() };
+  
+    try {
+      if (isEditing !== null) {
+        // Update existing link
+        const linkToUpdate = links[isEditing];
+        await axios.put(`${API_BASE_URL}/${linkToUpdate._id}`, newLink); // Use `_id` from the database
+        const updatedLinks = links.map((link, index) =>
+          index === isEditing ? { ...link, ...newLink } : link
+        );
+        setLinks(updatedLinks);
+        setIsEditing(null);
+      } else {
+        // Add new link
+        const response = await axios.post(API_BASE_URL, newLink);
+        setLinks([...links, response.data]); // Add the new link returned by the API
+      }
+      setName("");
+       setDescription("");
+     } catch (error) {
+      console.error("Error saving link:", error);
     }
-
-    setName("");
-    setDescription("");
   };
+  
 
   const handleEdit = (index) => {
-    const component = components[index];
-    setName(component.name);
-    setDescription(component.description);
-    setIsEditing(index);
+    const link = links[index];
+    setName(link.name);
+    setDescription(link.description);
+     setIsEditing(index); // Keep track of the index for updating the correct link
   };
+  
 
-  const handleDelete = (index) => {
-    const updatedComponents = components.filter((_, i) => i !== index);
-    setComponents(updatedComponents);
+  const handleDelete = async (index, id) => {
+    if (!id) {
+      console.error("Invalid ID:", id);
+      return;
+    }
+  
+    try {
+      await axios.delete(`${API_BASE_URL}/${id}`); // Use the actual ID in the API call
+      const updatedLinks = links.filter((_, i) => i !== index); // Remove the link from the list
+      setLinks(updatedLinks);
+    } catch (error) {
+      console.error("Error deleting link:", error);
+    }
   };
+  
+console.log(links,"link");
 
   return (
     <div className="container my-5">
-      <h2>{isEditing !== null ? "Edit Component" : "Add New Component"}</h2>
+      <h2>{isEditing !== null ? "Edit Link" : "Add New Link"}</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Name</label>
@@ -93,6 +112,7 @@ const AddNewComponentForm = () => {
             required
           />
         </div>
+        
         <div className="mb-3">
           <label className="form-label">Description</label>
           <textarea
@@ -103,29 +123,35 @@ const AddNewComponentForm = () => {
             required
           />
         </div>
+         
         <button type="submit" className="btn btn-primary">
-          {isEditing !== null ? "Update Component" : "Add Component"}
+          {isEditing !== null ? "Update Link" : "Add Link"}
         </button>
       </form>
 
-      <h3 className="my-4">Components List</h3>
-      {components.length === 0 ? (
-        <p>No components added yet.</p>
-      ) : (
-        components.map((component, index) => (
-          <DetailCard
-            key={index}
-            name={component.name}
-            description={component.description}
-            date={component.date}
-            onEdit={() => handleEdit(index)}
-            onDelete={() => handleDelete(index)}
-          />
-        ))
-      )}
+      <h3 className="my-4">Links List</h3>
+      {links && links.length > 0 ? (
+  links.map((link, index) => (
+    <DetailCard
+      key={link._id} // Use the unique `_id` as the key
+      name={link.name}
+      title={link.title}
+      description={link.description}
+      type={link.type}
+      date={link.date}
+      onEdit={() => handleEdit(index)}
+      onDelete={() => handleDelete(index, link._id)} // Pass `_id` to handleDelete
+    />
+  ))
+) : (
+  <p>No links available.</p>
+)}
+
+
     </div>
   );
 };
+ 
  
 const Today = () => {
   return (

@@ -1,95 +1,121 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import axios from "axios"; // Use Axios for API requests
+
+const API_BASE_URL = "http://localhost:5000/api/links"; // Replace with your API base URL
 
 const DetailCard = ({ name, title, description, type, date, onEdit, onDelete }) => {
-    return (
-      <div className="card my-3">
-        <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <p className="card-text">
-            URL: <a href={title} target="_blank" rel="noopener noreferrer">{title}</a>
-          </p>
-          <p className="card-text">Description: {description}</p>
-          <p className="card-text">Type: {type}</p>
-          <p className="card-text">
-            <small className="text-muted">Date: {date}</small>
-          </p>
-          <div>
-            <button className="btn btn-warning me-2" onClick={onEdit}>
-              Edit
-            </button>
-            <button className="btn btn-danger" onClick={onDelete}>
-              Delete
-            </button>
-          </div>
+  return (
+    <div className="card my-3">
+      <div className="card-body">
+        <h5 className="card-title">{name}</h5>
+        <p className="card-text">
+          URL: <a href={title} target="_blank" rel="noopener noreferrer">{title}</a>
+        </p>
+        <p className="card-text">Description: {description}</p>
+        <p className="card-text">Type: {type}</p>
+        <p className="card-text">
+          <small className="text-muted">Date: {date}</small>
+        </p>
+        <div>
+          <button className="btn btn-warning me-2" onClick={onEdit}>
+            Edit
+          </button>
+          <button className="btn btn-danger" onClick={onDelete}>
+            Delete
+          </button>
         </div>
       </div>
-    );
-  };
-  
- const AddNewComponentForm = () => {
+    </div>
+  );
+};
+
+const AddNewComponentForm = () => {
   const [name, setName] = useState("");
-  const [title, setTitle] = useState(""); // New field for title or URL
+  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [type, setType] = useState(""); // New field for type
-  const [links, setComponents] = useState(() => {
-    const storedComponents = localStorage.getItem("links");
-    return storedComponents ? JSON.parse(storedComponents) : [];
-  });
+  const [type, setType] = useState("");
+  const [links, setLinks] = useState([]);
   const [isEditing, setIsEditing] = useState(null);
 
+  // Fetch links from the API
   useEffect(() => {
-    localStorage.setItem("links", JSON.stringify(links));
-  }, [links]);
-  
-  const getCurrentDateTime = () => {
-    const now = new Date();
-    return now.toLocaleString(); 
-  };
+    const fetchLinks = async () => {
+      try {
+        const response = await axios.get(API_BASE_URL);
+        setLinks(response.data); // Assume API returns an array of links
+      } catch (error) {
+        console.error("Error fetching links:", error);
+      }
+    };
 
-  const handleSubmit = (e) => {
+    fetchLinks();
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const currentDateTime = getCurrentDateTime();
-
-    if (isEditing !== null) {
-      const updatedComponents = links.map((component, index) =>
-        index === isEditing
-          ? { ...component, name, title, description, type }
-          : component
-      );
-      setComponents(updatedComponents);
-      setIsEditing(null);
-    } else {
-      const newComponent = { name, title, description, type, date: currentDateTime };
-      setComponents([...links, newComponent]);
+  
+    const newLink = { name, title, description, type, date: new Date().toLocaleString() };
+  
+    try {
+      if (isEditing !== null) {
+        // Update existing link
+        const linkToUpdate = links[isEditing];
+        await axios.put(`${API_BASE_URL}/${linkToUpdate._id}`, newLink); // Use `_id` from the database
+        const updatedLinks = links.map((link, index) =>
+          index === isEditing ? { ...link, ...newLink } : link
+        );
+        setLinks(updatedLinks);
+        setIsEditing(null);
+      } else {
+        // Add new link
+        const response = await axios.post(API_BASE_URL, newLink);
+        setLinks([...links, response.data]); // Add the new link returned by the API
+      }
+      setName("");
+      setTitle("");
+      setDescription("");
+      setType("");
+    } catch (error) {
+      console.error("Error saving link:", error);
     }
-
-    setName("");
-    setTitle(""); // Reset the title field
-    setDescription("");
-    setType(""); // Reset the type field
   };
+  
 
   const handleEdit = (index) => {
-    const component = links[index];
-    setName(component.name);
-    setTitle(component.title); // Populate the title field
-    setDescription(component.description);
-    setType(component.type); // Populate the type field
-    setIsEditing(index);
+    const link = links[index];
+    setName(link.name);
+    setTitle(link.title);
+    setDescription(link.description);
+    setType(link.type);
+    setIsEditing(index); // Keep track of the index for updating the correct link
   };
+  
 
-  const handleDelete = (index) => {
-    const updatedComponents = links.filter((_, i) => i !== index);
-    setComponents(updatedComponents);
+  const handleDelete = async (index, id) => {
+    if (!id) {
+      console.error("Invalid ID:", id);
+      return;
+    }
+  
+    try {
+      await axios.delete(`${API_BASE_URL}/${id}`); // Use the actual ID in the API call
+      const updatedLinks = links.filter((_, i) => i !== index); // Remove the link from the list
+      setLinks(updatedLinks);
+    } catch (error) {
+      console.error("Error deleting link:", error);
+    }
   };
+  
+  
 
   return (
     <div className="container my-5">
-      <h2>{isEditing !== null ? "Edit Component" : "Add New Component"}</h2>
+      <h2>{isEditing !== null ? "Edit Link" : "Add New Link"}</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label className="form-label">Title</label>
+          <label className="form-label">Name</label>
           <input
             type="text"
             className="form-control"
@@ -129,27 +155,29 @@ const DetailCard = ({ name, title, description, type, date, onEdit, onDelete }) 
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          {isEditing !== null ? "Update Component" : "Add Component"}
+          {isEditing !== null ? "Update Link" : "Add Link"}
         </button>
       </form>
 
-      <h3 className="my-4">links List</h3>
-      {links.length === 0 ? (
-        <p>No links added yet.</p>
-      ) : (
-        links.map((component, index) => (
-          <DetailCard
-            key={index}
-            name={component.name}
-            title={component.title} // Pass the title
-            description={component.description}
-            type={component.type} // Pass the type
-            date={component.date}
-            onEdit={() => handleEdit(index)}
-            onDelete={() => handleDelete(index)}
-          />
-        ))
-      )}
+      <h3 className="my-4">Links List</h3>
+      {links && links.length > 0 ? (
+  links.map((link, index) => (
+    <DetailCard
+      key={link._id} // Use the unique `_id` as the key
+      name={link.name}
+      title={link.title}
+      description={link.description}
+      type={link.type}
+      date={link.date}
+      onEdit={() => handleEdit(index)}
+      onDelete={() => handleDelete(index, link._id)} // Pass `_id` to handleDelete
+    />
+  ))
+) : (
+  <p>No links available.</p>
+)}
+
+
     </div>
   );
 };
